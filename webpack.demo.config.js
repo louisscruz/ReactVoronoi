@@ -1,11 +1,11 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './demo/index.js',
+  entry: './demo/index.jsx',
   output: {
     path: path.resolve(__dirname, 'demo', 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
@@ -14,13 +14,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
+          presets: ['es2015', 'react'],
+        },
+      },
+    ],
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
-  }
+    extensions: ['.js', '.jsx', '*'],
+  },
 };

@@ -6,7 +6,7 @@ module.exports = {
   entry: './demo/index.js',
   output: {
     path: path.resolve(__dirname, 'demo', 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
@@ -15,16 +15,16 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
+          presets: ['es2015', 'react'],
+        },
+      },
+    ],
   },
   devtool: 'source-maps',
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '*']
-  }
+    extensions: ['.js', '.jsx', '*'],
+  },
 };
